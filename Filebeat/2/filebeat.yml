@@ -6,7 +6,7 @@ filebeat.prospectors:
 - input_type: log
   paths:
     - /s1forumdata/logs/*.log
-  document_type: nginx-access
+  document_type: nginx-access-bbs
 
 output.logstash:
   hosts: ["192.168.2.99:5044"]
