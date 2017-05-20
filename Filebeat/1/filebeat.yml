@@ -1,0 +1,9 @@
+filebeat.prospectors:
+- input_type: log
+  paths:
+    - /usr/local/nginx/logs/app_access.log
+  document_type: nginx-access-app
+  
+output.logstash:
+  hosts: ["192.168.2.99:5044"]
+  proxy_url: socks5://Stage1st-APP3:1080
