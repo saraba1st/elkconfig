@@ -11,3 +11,5 @@ filebeat.prospectors:
 output.logstash:
   hosts: ["192.168.2.99:5044"]
   proxy_url: socks5://Stage1st-APP3:1080
+  worker: 4
+  bulk_max_size: 8192
