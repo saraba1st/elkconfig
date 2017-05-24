@@ -1,0 +1,7 @@
+PHP <\?PHP exit;\?>
+UNIXTIMESTAMP %{INT}
+STATUS \t(?<sa>0)
+REASON \b.*\b
+
+BANLOG %{PHP}\t%{UNIXTIMESTAMP:timestamp}\t%{USER:operator_username}\t%{INT:operator_groupid}\t%{IP:operator_ip}\t%{USER:target_username}\t%{USER:target_origgroupid}\t%{USER:target_newgroupid}\t(?:%{UNIXTIMESTAMP:expiration}|)\t(?:%{REASON:reason}|}(?:%{STATUS}|$)
+ILLEGALLOG %{PHP}\t%{UNIXTIMESTAMP:timestamp}\t%{DATA:username}\t%{DATA:password}\tQues #%{INT:questionid}\t%{IP:ip}

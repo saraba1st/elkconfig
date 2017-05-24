@@ -8,6 +8,11 @@ filebeat.prospectors:
     - /s1forumdata/logs/*.log
   document_type: nginx-access-bbs
 
+- input_type: log
+  paths:
+    - /var/vh/www.saraba1st.com/2b/data/log/*_illegallog.php
+  document_type: discuz-illegallog
+
 output.logstash:
   hosts: ["192.168.2.99:5044"]
   proxy_url: socks5://Stage1st-APP3:1080
