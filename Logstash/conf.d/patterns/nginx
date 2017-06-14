@@ -1,4 +1,4 @@
 SYSLOG %{SYSLOGTIMESTAMP:syslog_timestamp} %{IPORHOST:syslog_host} %{PROG:syslog_program}
-NGINX %{IP:remote_addr} - %{USERNAME} \[%{HTTPDATE:http_date}\] %{REQUEST} %{NUMBER:http_status_code} (?:%{NUMBER:bytes}|-) %{REFERER:http_referer} %{QUOTEDSTRING:http_user_agent} %{QUOTEDSTRING:http_x_forwarded_for} %{NUMBER:request_time} (?:%{NUMBER:upstream_response_time}|-) %{GREEDYDATA:pipe}
+NGINX %{IP:remote_addr} - %{USERNAME} \[%{HTTPDATE:http_date}\] %{QS:http_host} %{REQUEST} %{NUMBER:http_status_code} (?:%{NUMBER:bytes}|-) %{REFERER:http_referer} %{QS:http_user_agent} %{QS:http_x_forwarded_for} %{NUMBER:request_time} (?:%{NUMBER:upstream_response_time}|-) %{GREEDYDATA:pipe}
 REQUEST \"(?:%{WORD:http_method} %{NOTSPACE:request_path}(?: HTTP/%{NUMBER:http_version})?|%{DATA:rawrequest})\"
 REFERER \"(?:%{URI}|%{DATA})\"
